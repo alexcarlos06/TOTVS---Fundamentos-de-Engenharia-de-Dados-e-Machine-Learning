@@ -1,45 +1,51 @@
-# 🚀 Explorando IA Generativa em um projeto de pipeline de ETL com Python
+# 🚀 Explorando IA Generativa em um projeto de Engenharia de Software com Python
 
 ## 📌 Visão Geral
-Este projeto implementa um pipeline de ETL (Extract, Transform, Load) em Python para coleta, tratamento e enriquecimento de dados cambiais utilizando a API Frankfurter.
+Este projeto implementa um **serviço backend em Python** responsável pela ingestão, processamento e enriquecimento de dados cambiais a partir de APIs externas.
 
-Além disso, o projeto explora o uso de **IA Generativa como apoio no desenvolvimento**, auxiliando na construção da arquitetura, código e boas práticas de engenharia de dados.
+A solução foi estruturada utilizando princípios de **Engenharia de Software**, com foco em:
+- arquitetura desacoplada
+- separação de responsabilidades
+- integração com APIs REST
+- processamento de dados orientado a regras de negócio
+
+Além disso, o projeto explora o uso de **IA Generativa como apoio no desenvolvimento**, atuando como acelerador na construção da solução.
 
 ---
 
 ## 🎯 Objetivo
-- Consumir dados reais de câmbio
-- Aplicar transformações analíticas
-- Enriquecer dados com metadados de moedas
-- Gerar uma base estruturada para análise
-- Demonstrar o uso de IA Generativa como acelerador de desenvolvimento
+- Consumir dados reais via API REST
+- Implementar regras de negócio para processamento de dados
+- Enriquecer dados com informações externas
+- Construir uma aplicação modular e escalável
+- Demonstrar o uso de IA Generativa no ciclo de desenvolvimento
 
 ---
 
-## 🤖 Onde a IA Generativa foi utilizada
+## 🤖 Uso de IA Generativa no Projeto
 
-A IA Generativa foi utilizada como um **copiloto de desenvolvimento**, apoiando nas seguintes etapas:
+A IA Generativa foi utilizada como um **copiloto de desenvolvimento**, apoiando:
 
-### 🔹 Arquitetura do Pipeline
-- Definição das camadas: extract, transform, load
-- Separação de responsabilidades (Clean Architecture)
+### 🔹 Arquitetura de Software
+- Definição da arquitetura em camadas (extract, transform, load)
+- Aplicação de princípios de separação de responsabilidades
 
-### 🔹 Desenvolvimento de Código
-- Criação das funções de extração com requests
-- Implementação das regras de transformação (variação %, média móvel)
-- Construção do processo de enriquecimento (join em memória)
+### 🔹 Implementação Backend
+- Desenvolvimento de integrações com APIs REST (requests)
+- Estruturação de funções reutilizáveis
+- Modelagem de fluxo de dados entre camadas
 
-### 🔹 Boas Práticas
-- Uso de typing para definição de contratos de dados
-- Estrutura modular e desacoplada
+### 🔹 Qualidade de Código
+- Uso de typing para definição de contratos
+- Padronização de estrutura de código
 - Tratamento de erros com `raise_for_status`
 
-### 🔹 Evolução do Projeto
-- Identificação de melhorias (agrupamento por moeda)
+### 🔹 Evolução Técnica
+- Refatoração para suportar múltiplas moedas
 - Correção de bugs de lógica
-- Sugestões de arquitetura mais escalável
+- Sugestões de melhorias arquiteturais
 
-👉 A IA não substituiu o desenvolvimento, mas atuou como **acelerador de aprendizado e produtividade**.
+👉 A IA foi utilizada como ferramenta de apoio, mantendo o controle técnico das decisões no desenvolvimento.
 
 ---
 
@@ -47,17 +53,17 @@ A IA Generativa foi utilizada como um **copiloto de desenvolvimento**, apoiando 
 
 01-etl-python/
 │
-├── extract.py     # Extração de dados (API)
-├── transform.py   # Regras de negócio e enriquecimento
-├── load.py        # Persistência em CSV
-├── main.py        # Orquestração do pipeline
+├── extract.py     # Integração com APIs externas
+├── transform.py   # Regras de negócio e processamento
+├── load.py        # Persistência de dados
+├── main.py        # Orquestração da aplicação
 
 ---
 
-## 🔄 Fluxo do Pipeline
+## 🔄 Fluxo da Aplicação
 
-### 🔹 1. Extract
-Responsável por consumir dados da API Frankfurter:
+### 🔹 1. Extract (Integração)
+Responsável por consumir APIs externas:
 
 - Taxas de câmbio
 - Metadados das moedas
@@ -68,41 +74,42 @@ Endpoints utilizados:
 
 ---
 
-### 🔹 2. Transform
-Camada responsável por aplicar regras de negócio:
+### 🔹 2. Transform (Regra de Negócio)
 
-#### 📊 Processamentos realizados:
-- Agrupamento por moeda
+Camada responsável pelo processamento dos dados:
+
+#### 📊 Processamentos:
+- Agrupamento por entidade (moeda)
 - Ordenação temporal
 - Cálculo de variação percentual (%)
 - Cálculo de média móvel (7 dias)
 
-#### 🔗 Enriquecimento de dados:
+#### 🔗 Enriquecimento:
 - Nome da moeda (currency_name)
 - Símbolo da moeda (symbol)
 - Nome da moeda base (base_name)
 - Símbolo da moeda base (base_symbol)
 
-👉 Implementa um join em memória entre:
-- dados transacionais (taxas)
-- dados de referência (moedas)
+👉 Implementação de **join em memória** entre dados transacionais e dados de referência.
 
 ---
 
-### 🔹 3. Load
-Responsável por salvar os dados em CSV:
+### 🔹 3. Load (Persistência)
 
+Responsável por exportar os dados:
+
+- Geração de arquivo CSV
 - Estrutura dinâmica
-- Encoding UTF-8
-- Pronto para consumo em BI / Excel
+- Compatível com ferramentas analíticas (Excel, BI)
 
 ---
 
 ## ⚙️ Tecnologias Utilizadas
+
 - Python 3.x
-- requests (API)
+- requests (integração com APIs)
 - csv (persistência)
-- typing (tipagem)
+- typing (contratos de dados)
 - IA Generativa (ChatGPT)
 
 ---
@@ -125,24 +132,30 @@ python main.py
 
 ## 🧠 Conceitos Aplicados
 
-- ETL Pipeline
-- Data Enrichment
-- Clean Architecture
-- Separação de responsabilidades
+- Engenharia de Software aplicada a dados
+- Arquitetura em camadas
+- Integração com APIs REST
 - Processamento de séries temporais
+- Data Enrichment
+- Separação de responsabilidades
 - Uso de IA Generativa no desenvolvimento
 
 ---
 
 ## 🚀 Possíveis Evoluções
 
-- Persistência em banco (PostgreSQL)
-- Agendamento (Airflow / Cron)
-- Dashboard (Power BI)
-- API para exposição dos dados
-- Testes automatizados
+- Exposição via API (FastAPI)
+- Persistência em banco de dados (PostgreSQL)
+- Containerização com Docker
+- Implementação de testes automatizados (pytest)
+- Logging estruturado
+- Orquestração (Airflow)
 
 ---
 
 ## 👨‍💻 Autor
-Projeto desenvolvido para estudo e portfólio em Engenharia de Dados, explorando o uso de IA Generativa no processo de desenvolvimento.
+
+Alex Carlos de Sousa  
+Engenharia de Software | Backend | Integrações | Automação  
+
+Projeto desenvolvido para estudo e portfólio, com foco em aplicação de conceitos de Engenharia de Software e uso de IA Generativa no processo de desenvolvimento.
