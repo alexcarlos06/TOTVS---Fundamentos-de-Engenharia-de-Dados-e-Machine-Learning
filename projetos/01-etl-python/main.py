@@ -4,7 +4,7 @@ from load import load_to_csv
 
 
 def main():
-    raw = extract_exchange_rates_frankfurter(quotes="BRL,GBP")
+    raw = extract_exchange_rates_frankfurter(quotes="BRL", start_date="2018-01-01", end_date="2026-04-01")
     currencies = extract_details_currency()
     currency_map = build_currency_map(currencies)
     transformed = transform_exchange_rates(raw, currency_map)
