@@ -123,7 +123,7 @@ Redução de custos de armazenamento por movimentação automática de dados ent
 
 A empresa armazena documentos, backups, relatórios e arquivos históricos em buckets Amazon S3. Nem todos esses arquivos são acessados com frequência. Alguns são usados diariamente, enquanto outros ficam armazenados apenas para consulta eventual ou obrigação legal.
 
-O **Amazon S3 Intelligent-Tiering** permite otimizar os custos de armazenamento ao mover automaticamente objetos entre diferentes camadas, de acordo com o padrão de acesso. A AWS informa que essa classe de armazenamento monitora os padrões de acesso e move automaticamente os objetos para camadas de menor custo quando eles não são acessados por determinado período. :contentReference[oaicite:2]{index=2}
+O **Amazon S3 Intelligent-Tiering** permite otimizar os custos de armazenamento ao mover automaticamente objetos entre diferentes camadas, de acordo com o padrão de acesso. A AWS informa que essa classe de armazenamento monitora os padrões de acesso e move automaticamente os objetos para camadas de menor custo quando eles não são acessados por determinado período.
 
 ### Benefícios esperados
 
